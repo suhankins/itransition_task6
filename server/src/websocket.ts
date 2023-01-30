@@ -27,7 +27,7 @@ export function startWsServer() {
             const req = JSON.parse(rawReq.toString());
             const action = req.action;
 
-            console.log(`${new Date(Date.now()).getSeconds()} USER ${user.name} REQUESTED ${action}(${JSON.stringify(req.data)})`);
+            console.log(`USER ${user.name} REQUESTED ${action}(${JSON.stringify(req.data)})`);
 
             if (action === undefined) {
                 ws.send(NO_ACTION);
