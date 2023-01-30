@@ -8,13 +8,9 @@ import { User } from './User.js';
 
 export let wss: WebSocketServer;
 
-export function startWsServer() {
-    wss = new WebSocketServer({ port: 8080 });
-    let address: string | AddressInfo = wss.address();
-    if (typeof address !== 'string') {
-        address = address.port.toString();
-    }
-    console.log(`Websocket server listening on port ${address}`);
+export function startWsServer(server: any) {
+    wss = new WebSocketServer({ server: server });
+    console.log(`Websocket server listening`);
 
     wss.on('connection', (ws) => {
         const user: User = {

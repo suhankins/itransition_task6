@@ -19,7 +19,6 @@ connectClient();
  * Starting websocket server
  */
 Action.Init();
-startWsServer();
 
 /**
  * Store port in Express.
@@ -30,6 +29,8 @@ httpServer.set('port', process.env.PORT || 9000);
  * Create HTTP server.
  */
 let server = createServer(httpServer);
+
+startWsServer(server);
 
 /**
  * Listen on provided port, on all network interfaces.
