@@ -62,7 +62,11 @@ export async function connect(
     setLoading: Function,
     setError: Function
 ) {
-    client = new WebSocket('wss://itransitiontask6.onrender.com');
+    client = new WebSocket(
+        import.meta.env.DEV
+            ? 'ws://localhost:9000'
+            : 'wss://itransitiontask6.onrender.com'
+    );
 
     client.onopen = () => {
         client.send(
