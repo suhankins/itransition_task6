@@ -1,5 +1,7 @@
 # itransition task 6
 
+Sorta-email service with no passwords, just usernames.
+
 ## How to build
 1. npm install
 2. npm run build
